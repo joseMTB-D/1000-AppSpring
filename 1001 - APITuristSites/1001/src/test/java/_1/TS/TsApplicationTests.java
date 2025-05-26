@@ -1,5 +1,7 @@
 package _1.TS;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +10,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TsApplicationTests {
 
+	/*
+	 * Test para comprobar la conexión a la API de Dataestur.
+	 * Se verifica que se puede establecer una conexión y que el código de respuesta es 200.
+	 */
 	@Test
 	void testConexion() {
 		Logger logger = LoggerFactory.getLogger(TsApplicationTests.class);
@@ -18,18 +24,9 @@ class TsApplicationTests {
 
 			int responseCode = conn.getResponseCode();
 			assert(responseCode == 200);
-
-			try (java.io.BufferedReader in = new java.io.BufferedReader(
-					new java.io.InputStreamReader(conn.getInputStream()))) {
-				String inputLine;
-				StringBuilder content = new StringBuilder();
-				while ((inputLine = in.readLine()) != null) {
-					content.append(inputLine);
-				}
-			}
 			conn.disconnect();
 		} catch (Exception e) {
-			assert(false);
+			assert false : "Excepción durante la conexión: " + e.getMessage();
 		}
 	}
 
@@ -38,7 +35,15 @@ class TsApplicationTests {
 	 */
 	@Test
 	void testGet() {
-
+  		//'https://dataestur.azure-api.net/API-SEGITTUR-v1/ETR_DL?Pa%C3%ADs%20destino=Todos&CCAA%20de%20residencia=Todos&CCAA%20de%20destino=Todos';
+		Logger logger = LoggerFactory.getLogger(TsApplicationTests.class);
+		List<String> PaisDestino = new java.util.ArrayList<>();
+		List<String> ComunidadAutonomaEs = new java.util.ArrayList<>();
+		PaisDestino.add("España");
+		ComunidadAutonomaEs.add("Andalucía");
+		String getUrlSites = "https://dataestur.azure-api.net/API-SEGITTUR-v1/ETR_DL?Pa%C3%ADs%20destino=" + PaisDestino.get(0) + 
+		"&CCAA%20de%20residencia=" + ComunidadAutonomaEs.get(1) +
+		"Todos&CCAA%20de%20destino=" + ComunidadAutonomaEs.get(0);
 	}
 
 }
