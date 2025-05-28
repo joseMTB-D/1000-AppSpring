@@ -1,5 +1,5 @@
 # _APITURISTSITES_:
-Esta Api se centra en una aplicacion java, que recoge datos de la web https://www.dataestur.es/ sobre destinos turisticos, los almacena en un mongoDB y muestra los destinos turisticos mas visitados, con menor indicede turismo por fechas.
+Esta Api se centra en una aplicacion java, que recoge datos de la web https://www.dataestur.es/ sobre destinos turisticos, los almacena en un mongoDB y muestra los destinos turisticos mas visitados, con menor indicede turismo por meses.
 
 
 ## Requisitos del programa:
