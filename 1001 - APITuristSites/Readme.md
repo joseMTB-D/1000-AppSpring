@@ -11,7 +11,7 @@ Esta Api se centra en una aplicacion java, que recoge datos de la web https://ww
 
 ### OPCIONAL:
 
-    Crear n servidor que permita visualizar los valores obtenidos. Si no se puede crear el servidor, se hostea.
+    Crear un servidor que permita visualizar los valores obtenidos. Si no se puede crear el servidor, se hostea.
 
 
 
